@@ -29,6 +29,13 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      contract_id: {
+        type: Sequelize.INTEGER,
+        references: { model: 'contracts', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        allowNull: true,
+      },
       delete_at: {
         type: Sequelize.DATE,
       },

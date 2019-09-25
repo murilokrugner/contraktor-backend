@@ -19,13 +19,6 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      parte_id: {
-        type: Sequelize.INTEGER,
-        references: { model: 'partes', key: 'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
-        allowNull: true,
-      },
       delete_at: {
         type: Sequelize.DATE,
       },

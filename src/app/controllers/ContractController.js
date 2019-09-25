@@ -28,7 +28,6 @@ class ContractController {
   async store(req, res) {
     const schema = Yup.object().shape({
       title: Yup.string().required(),
-      parte_id: Yup.number().required(),
       initialdate: Yup.date().required(),
       expirydate: Yup.date().required(),
     });
@@ -45,11 +44,10 @@ class ContractController {
       return res.status(400).json({ error: 'Contract already exists' });
     }
 
-    const { title, parte_id, initialdate, expirydate } = req.body;
+    const { title, initialdate, expirydate } = req.body;
 
     const addContract = await Contract.create({
       title,
-      parte_id,
       initialdate,
       expirydate,
     });

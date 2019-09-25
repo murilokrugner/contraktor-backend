@@ -15,6 +15,7 @@ class PartesController {
       cpf: Yup.string()
         .max(12)
         .required(),
+      contract_id: Yup.number().required(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -29,7 +30,7 @@ class PartesController {
       return res.status(400).json({ error: 'Partes already exists' });
     }
 
-    const { name, lastname, email, phone, cpf } = req.body;
+    const { name, lastname, email, phone, cpf, contract_id } = req.body;
 
     const addPartes = await Partes.create({
       name,
@@ -37,6 +38,7 @@ class PartesController {
       email,
       phone,
       cpf,
+      contract_id,
     });
 
     return res.json(addPartes);

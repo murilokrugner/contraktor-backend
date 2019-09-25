@@ -18,7 +18,6 @@ class Contract extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Partes, { foreignKey: 'parte_id', as: 'partes' });
     this.belongsTo(models.File, { foreignKey: 'file_id', as: 'file' });
   }
 }

@@ -17,6 +17,13 @@ class Partes extends Model {
 
     return this;
   }
+
+  static associate(models) {
+    this.belongsTo(models.Partes, {
+      foreignKey: 'contract_id',
+      as: 'contracts',
+    });
+  }
 }
 
 export default Partes;
