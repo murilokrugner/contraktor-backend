@@ -11,9 +11,9 @@ const upload = multer(multerConfig);
 
 routes.post('/contracts', ContractController.store);
 
-routes.get('/contracts/:title', ContractController.index);
+// routes.get('/contracts/:title', ContractController.index);
 
-routes.get('/contracts/', ContractController.index);
+routes.get('/contracts', ContractController.index);
 
 routes.put('/contracts/:id', ContractController.update);
 

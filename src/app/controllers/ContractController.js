@@ -4,23 +4,9 @@ import Partes from '../models/Partes';
 
 class ContractController {
   async index(req, res) {
-    const { page = 1 } = req.query;
+    // const { title } = req.params;
 
-    const { title } = req.params;
-
-    const contracts = await Contract.findAll({
-      where: { title },
-      limit: 20,
-      offset: (page - 1) * 20,
-      attributes: ['id', 'title', 'initialdate', 'expirydate'],
-      include: [
-        {
-          model: Partes,
-          as: 'partes',
-          attributes: ['id', 'name'],
-        },
-      ],
-    });
+    const contracts = await Contract.findAll({});
 
     return res.json(contracts);
   }
