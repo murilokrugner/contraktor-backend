@@ -15,6 +15,7 @@ routes.post('/contracts', ContractController.store);
 // routes.get('/contracts/:title', ContractController.index);
 
 routes.get('/contracts', ContractController.index);
+
 routes.get('/contractsid/:id', ContractIdController.index);
 
 routes.put('/contracts/:id', ContractController.update);
